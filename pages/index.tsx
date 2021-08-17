@@ -13,7 +13,7 @@ const Home: NextPage = () => {
             </Head>
             <div className={styles.containerLight}>
                 <div className={styles.description}>
-                    <h2>Halo, nama gua mangkoran!</h2>
+                    <h1>Halo, nama gua mangkoran!</h1>
                     <p>Selamat datang di website gua!</p>
                     <p>
                         Website ini dibuat menggunakan{' '}
@@ -23,7 +23,7 @@ const Home: NextPage = () => {
             </div>
             <div className={styles.containerLight}>
                 <div className={styles.description}>
-                    <h2>Sekilas tentang mangkoran</h2>
+                    <h1>Sekilas tentang mangkoran</h1>
                     <ul>
                         <li>
                             <p>
