@@ -1,4 +1,9 @@
-.container {
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+.containerDark,
+.containerLight {
   min-height: 100vh;
   /* padding: 0 0.5rem; */
   display: flex;
@@ -8,8 +13,22 @@
   height: 100vh;
 }
 
+.containerDark {
+    @apply
+    bg-gray-900
+    text-white
+    ;
+}
+
+.containerLight {
+    @apply
+    bg-gray-100
+    text-black
+    ;
+}
+
 .main {
-  /* padding: 5rem 0; */
+  padding: 5rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -17,8 +36,8 @@
   align-items: center;
 }
 
-.container,
-.main {
+.containerDark,
+.containerLight {
     padding: 5rem;
 }
 
@@ -124,3 +143,4 @@
     flex-direction: column;
   }
 }
+
