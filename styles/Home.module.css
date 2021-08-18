@@ -14,17 +14,11 @@
 }
 
 .containerDark {
-    @apply
-    bg-gray-900
-    text-white
-    ;
+    @apply bg-gray-900 text-gray-100;
 }
 
 .containerLight {
-    @apply
-    bg-gray-100
-    text-black
-    ;
+    @apply bg-gray-100 text-gray-900;
 }
 
 .main {
@@ -38,7 +32,8 @@
 
 .containerDark,
 .containerLight {
-    padding: 5rem;
+    /* padding: 5rem; */
+    @apply p-40;
 }
 
 .footer {
@@ -85,12 +80,14 @@
 }
 
 .code {
-    background: #fafafa;
+    /* background: #fafafa; */
     border-radius: 5px;
     padding: 0.75rem;
     font-size: 1.1rem;
     font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
         Bitstream Vera Sans Mono, Courier New, monospace;
+
+    @apply bg-gray-100 bg-opacity-10;
 }
 
 .grid {
