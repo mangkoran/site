@@ -60,13 +60,13 @@ const Home: NextPage = () => {
                     <li><fa.FaAt className="inline mr-2" /><a className={styles.link} href="mailto:afnazrie@gmail.com">
                         afnazrie@gmail.com
                     </a></li>
-                    <li><fa.FaGithub className="inline mr-2" /><a className={styles.link} href="https://github.com/mangkoran" target="_blank">
+                    <li><fa.FaGithub className="inline mr-2" /><a className={styles.link} href="https://github.com/mangkoran" target="_blank" rel="noreferrer">
                         mangkoran
                     </a></li>
-                    <li><fa.FaTwitter className="inline mr-2" /><a className={styles.link} href="https://twitter.com/mangkoran" target="_blank">
+                    <li><fa.FaTwitter className="inline mr-2" /><a className={styles.link} href="https://twitter.com/mangkoran" target="_blank" rel="noreferrer">
                         @mangkoran
                     </a></li>
-                    <li><fa.FaDiscord className="inline mr-2" /><a className={styles.link} href="https://discordapp.com/users/391547930550599680" target="_blank">
+                    <li><fa.FaDiscord className="inline mr-2" /><a className={styles.link} href="https://discordapp.com/users/391547930550599680" target="_blank" rel="noreferrer">
                         mangkoran#4645
                     </a></li>
                 </ul>
