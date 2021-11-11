@@ -41,7 +41,7 @@ const Home: NextPage = () => {
                 </ul>
             </div>
             <div className={styles.containerDark}>
-                <h1>Kemampuan teknikal pemrograman yang telah dikuasai</h1>
+                <h1>Teknik pemrograman</h1>
                 <ul>
                     <li>
                         Bahasa: C/C++, Python, Oracle DBMS, Java, PHP, JavaScript, TypeScript, Elisp
@@ -49,6 +49,7 @@ const Home: NextPage = () => {
                     <li>
                         Framework: Jekyll, Node.js, React.js, Next.js, Bootstrap, TailwindCSS
                     </li>
+                    <li>Teks editor/IDE: GNU Emacs, Visual Studio Code</li>
                     <li>
                         Lain-lain: Apache, Nginx, Docker, Windows, Linux, Git, GitHub Actions
                     </li>
