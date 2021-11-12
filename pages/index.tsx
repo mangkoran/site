@@ -63,7 +63,7 @@ const Home: NextPage = () => {
                             Pada saat inilah mangkoran pertama kali berjumpa dengan Linux
                         </li>
                         <li>
-                            Lebih menyukai belajar secara otodidak dan langsung diimplementasikan
+                            Lebih menyukai belajar secara otodidak
                         </li>
                         <li>
                             Gateron Brown {'>>>'}
@@ -81,14 +81,17 @@ const Home: NextPage = () => {
                 <h1>Teknik pemrograman</h1>
                 <ul>
                     <li>
-                        Bahasa: C/C++, Python, Oracle DBMS, Java, PHP, JavaScript, TypeScript, Elisp
+                        Bahasa: C/C++, Python, Java, PHP, JavaScript, TypeScript, Elisp, MySQL/MariaDB
                     </li>
                     <li>
-                        Framework: Jekyll, Node.js, React.js, Next.js, Bootstrap, TailwindCSS
+                        Front end: React.js, Next.js, Jekyll, Bootstrap, TailwindCSS
+                    </li>
+                    <li>
+                        Back end: Apache httpd, Nginx, Node.js, Express.js
                     </li>
                     <li>Teks editor/IDE: GNU Emacs, Visual Studio Code</li>
                     <li>
-                        Lain-lain: Apache, Nginx, Docker, Windows, Linux, Git, GitHub Actions
+                        Lain-lain: Windows, Linux, Docker, Git, GitHub Actions
                     </li>
                 </ul>
                 </motion.div>
@@ -101,20 +104,22 @@ const Home: NextPage = () => {
                     viewport={{ once: false, amount: 0.5 }}
                 >
                 <h1>Mari berkolaborasi</h1>
-                <ul className={clsx("list-none", styles.link)}>
-                    <li><fa.FaAt className="inline mr-2" /><a href="mailto:afnazrie@gmail.com">
-                        afnazrie@gmail.com
-                    </a></li>
-                    <li><fa.FaGithub className="inline mr-2" /><a href="https://github.com/mangkoran" target="_blank" rel="noreferrer">
-                        mangkoran
-                    </a></li>
-                    <li><fa.FaTwitter className="inline mr-2" /><a href="https://twitter.com/mangkoran" target="_blank" rel="noreferrer">
-                        @mangkoran
-                    </a></li>
-                    <li><fa.FaDiscord className="inline mr-2" /><a href="https://discordapp.com/users/391547930550599680" target="_blank" rel="noreferrer">
-                        mangkoran#4645
-                    </a></li>
-                </ul>
+                <div className={clsx("flex", "justify-center")}>
+                        <ul className={clsx("list-none", "w-[fit-content]", styles.link)}>
+                            <li><fa.FaAt className="inline mr-2" /><a href="mailto:afnazrie@gmail.com">
+                                afnazrie@gmail.com
+                            </a></li>
+                            <li><fa.FaGithub className="inline mr-2" /><a href="https://github.com/mangkoran" target="_blank" rel="noreferrer">
+                                mangkoran
+                            </a></li>
+                            <li><fa.FaTwitter className="inline mr-2" /><a href="https://twitter.com/mangkoran" target="_blank" rel="noreferrer">
+                                @mangkoran
+                            </a></li>
+                            <li><fa.FaDiscord className="inline mr-2" /><a href="https://discordapp.com/users/391547930550599680" target="_blank" rel="noreferrer">
+                                mangkoran#4645
+                            </a></li>
+                        </ul>
+                    </div>
                 </motion.div>
             </div>
         </LayoutHome>
