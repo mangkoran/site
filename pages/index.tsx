@@ -10,6 +10,7 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useRouter } from 'next/router'
 import type { GetStaticProps } from 'next'
+import Link from 'next/link'
 
 
 const Home: NextPage = () => {
@@ -43,10 +44,15 @@ const Home: NextPage = () => {
             {/* <path></path> */}
             <div className={styles.containerDark}>
                 <h1 className={styles.title}>{t('title')}</h1>
-                <p>
-                    {/* Website ini dibuat menggunakan{' '}
-                        <code className={styles.code}> yarn create next-app --ts</code> */}
-                </p>
+                <Link
+                    href='/'
+                    locale={router.locale === 'en' ? 'id' : 'en'}
+                    passHref
+                >
+                    <a className={clsx("text-2xl", "opacity-50")}>
+                        {t('change-locale')}
+                    </a>
+                </Link>
             </div>
             <div className={styles.containerDark}>
                 <motion.div
