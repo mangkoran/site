@@ -14,11 +14,13 @@
 }
 
 .containerDark {
-    @apply bg-gray-900 text-gray-100;
+    @apply bg-gray-900;
+    @apply text-gray-100;
 }
 
 .containerLight {
-    @apply bg-gray-100 text-gray-900;
+    @apply bg-gray-100;
+    @apply text-gray-900;
 }
 
 .main {
@@ -78,14 +80,14 @@
     padding: 0.75rem;
     font-size: 1.1rem;
     font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-        Bitstream Vera Sans Mono, Courier New, monospace;
-
-    @apply bg-gray-100 bg-opacity-10;
+                 Bitstream Vera Sans Mono, Courier New, monospace;
+    @apply bg-gray-100;
+    @apply bg-opacity-10;
 }
 
-.link:hover,
-.link:focus,
-.link:active {
+.link a:hover,
+.link a:focus,
+.link a:active {
     text-decoration: underline;
 }
 
