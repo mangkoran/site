@@ -138,7 +138,7 @@ const Home: NextPage = () => {
     )
 }
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => ({
+export const getStaticProps: GetStaticProps = async ({ locale }: { locale: string }) => ({
     props: {
         ...await serverSideTranslations(locale, ['common']), /* https://github.com/isaachinman/next-i18next/issues/1307 */
     },
