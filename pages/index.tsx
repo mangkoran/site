@@ -6,29 +6,35 @@ import LayoutHome, { sitleTitle } from '../components/layout/home'
 import * as fa from 'react-icons/fa'
 import { motion, Variants } from 'framer-motion'
 import clsx from 'clsx'
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useRouter } from 'next/router'
+import type { GetStaticProps } from 'next'
 
-const divVariants: Variants = {
-    offscreen: {
-        opacity: 0.05
-    },
-    onscreen: {
-        opacity: 1,
-        transition: {
-            duration: 0.5
-        }
-    }
-}
-
-/* const aVariants: Variants = {
-*     normal: {
-*
-*     },
-*     hover: {
-*
-*     }
-* } */
 
 const Home: NextPage = () => {
+    const divVariants: Variants = {
+        offscreen: {
+            opacity: 0.05
+        },
+        onscreen: {
+            opacity: 1,
+            transition: {
+                duration: 0.5
+            }
+        }
+    }
+    /* const aVariants: Variants = {
+    *     normal: {
+    *
+    *     },
+    *     hover: {
+    *
+    *     }
+    * } */
+    const router = useRouter()
+    const { t } = useTranslation('common')
+
     return (
         <LayoutHome>
             <Head>
@@ -36,7 +42,7 @@ const Home: NextPage = () => {
             </Head>
             {/* <path></path> */}
             <div className={styles.containerDark}>
-                <h1 className={styles.title}>Halo, nama saya mangkoran!</h1>
+                <h1 className={styles.title}>{t('title')}</h1>
                 <p>
                     {/* Website ini dibuat menggunakan{' '}
                         <code className={styles.code}> yarn create next-app --ts</code> */}
@@ -49,7 +55,7 @@ const Home: NextPage = () => {
                     whileInView="onscreen"
                     viewport={{ once: false, amount: 0.5 }}
                 >
-                    <h1>Sekilas tentang mangkoran</h1>
+                    <h1>{t('about')}</h1>
                     <ul>
                         <li>
                             Seorang pelajar yang sekarang sedang menempuh pendidikan{' '}
@@ -78,7 +84,7 @@ const Home: NextPage = () => {
                     whileInView="onscreen"
                     viewport={{ once: false, amount: 0.5 }}
                 >
-                <h1>Teknik pemrograman</h1>
+                <h1>{t('programming-skill')}</h1>
                 <ul>
                     <li>
                         Bahasa: C/C++, Python, Java, PHP, JavaScript, TypeScript, Elisp, MySQL/MariaDB
@@ -103,7 +109,7 @@ const Home: NextPage = () => {
                     whileInView="onscreen"
                     viewport={{ once: false, amount: 0.5 }}
                 >
-                <h1>Mari berkolaborasi</h1>
+                <h1>{t('contact')}</h1>
                 <div className={clsx("flex", "justify-center")}>
                         <ul className={clsx("list-none", "w-[fit-content]", styles.link)}>
                             <li><fa.FaAt className="inline mr-2" /><a href="mailto:afnazrie@gmail.com">
@@ -125,5 +131,11 @@ const Home: NextPage = () => {
         </LayoutHome>
     )
 }
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => ({
+    props: {
+        ...await serverSideTranslations(locale, ['common']), /* https://github.com/isaachinman/next-i18next/issues/1307 */
+    },
+})
 
 export default Home
