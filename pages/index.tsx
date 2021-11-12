@@ -4,6 +4,19 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import LayoutHome, { sitleTitle } from '../components/layout/home'
 import * as fa from 'react-icons/fa'
+import { motion, Variants } from 'framer-motion'
+
+const divVariants: Variants = {
+    offscreen: {
+        opacity: 0.08
+    },
+    onscreen: {
+        opacity: 1,
+        transition: {
+            duration: 0.8
+        }
+    }
+}
 
 const Home: NextPage = () => {
     return (
@@ -19,28 +32,41 @@ const Home: NextPage = () => {
                 </p>
             </div>
             <div className={styles.containerDark}>
-                <h1>Sekilas tentang mangkoran</h1>
-                <ul>
-                    <li>
-                        Seorang pelajar yang sekarang sedang menempuh pendidikan{' '}
-                        <em>bachelor degree</em> di Universiti Teknologi Malaysia, Johor
-                    </li>
-                    <li>
-                        Berasal dari Kota Pahlawan, namun sekarang (masih) tinggal bersama keluarga di Paris Van Java
-                    </li>
-                    <li>
-                        Mulai tertarik pada dunia perkomputeran sejak duduk di bangku SMP.
-                        Pada saat inilah mangkoran pertama kali berjumpa dengan Linux
-                    </li>
-                    <li>
-                        Lebih menyukai belajar secara otodidak dan langsung diimplementasikan
-                    </li>
-                    <li>
-                        Gateron Brown {'>>>'}
-                    </li>
-                </ul>
+                <motion.div
+                    variants={divVariants}
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{ once: false, amount: 0.5 }}
+                >
+                    <h1>Sekilas tentang mangkoran</h1>
+                    <ul>
+                        <li>
+                            Seorang pelajar yang sekarang sedang menempuh pendidikan{' '}
+                            <em>bachelor degree</em> di Universiti Teknologi Malaysia, Johor
+                        </li>
+                        <li>
+                            Berasal dari Kota Pahlawan, namun sekarang (masih) tinggal bersama keluarga di Paris Van Java
+                        </li>
+                        <li>
+                            Mulai tertarik pada dunia perkomputeran sejak duduk di bangku SMP.
+                            Pada saat inilah mangkoran pertama kali berjumpa dengan Linux
+                        </li>
+                        <li>
+                            Lebih menyukai belajar secara otodidak dan langsung diimplementasikan
+                        </li>
+                        <li>
+                            Gateron Brown {'>>>'}
+                        </li>
+                    </ul>
+                </motion.div>
             </div>
             <div className={styles.containerDark}>
+                <motion.div
+                    variants={divVariants}
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{ once: false, amount: 0.5 }}
+                >
                 <h1>Teknik pemrograman</h1>
                 <ul>
                     <li>
@@ -54,6 +80,7 @@ const Home: NextPage = () => {
                         Lain-lain: Apache, Nginx, Docker, Windows, Linux, Git, GitHub Actions
                     </li>
                 </ul>
+                </motion.div>
             </div>
             <div className={styles.containerDark}>
                 <h1>Mari berkolaborasi</h1>
