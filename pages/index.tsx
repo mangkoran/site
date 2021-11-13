@@ -1,22 +1,19 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-/* import Image from 'next/image' */
-import styles from '../styles/Home.module.css'
-import LayoutHome, { sitleTitle } from '../components/layout/home'
-import * as fa from 'react-icons/fa'
-import { motion, Variants } from 'framer-motion'
 import clsx from 'clsx'
-import { useTranslation } from 'next-i18next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { useRouter } from 'next/router'
+import Head from 'next/head'
+import * as fa from 'react-icons/fa'
+import type { NextPage } from 'next'
 import type { GetStaticProps } from 'next'
-import Link from 'next/link'
-
+import { useTranslation } from 'next-i18next'
+import styles from '../styles/Home.module.css'
+import { motion, Variants } from 'framer-motion'
+import LocaleSwitcher from '../components/locale-switcher'
+import LayoutHome, { sitleTitle } from '../components/layout/home'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 const Home: NextPage = () => {
     const divVariants: Variants = {
         offscreen: {
-            opacity: 0.05
+            opacity: 0.1
         },
         onscreen: {
             opacity: 1,
@@ -25,15 +22,6 @@ const Home: NextPage = () => {
             }
         }
     }
-    /* const aVariants: Variants = {
-    *     normal: {
-    *
-    *     },
-    *     hover: {
-    *
-    *     }
-    * } */
-    const router = useRouter()
     const { t } = useTranslation('common')
 
     return (
@@ -41,18 +29,9 @@ const Home: NextPage = () => {
             <Head>
                 <title>{sitleTitle}</title>
             </Head>
-            {/* <path></path> */}
             <div className={styles.containerDark}>
                 <h1 className={styles.title}>{t('title')}</h1>
-                <Link
-                    href='/'
-                    locale={router.locale === 'en' ? 'id' : 'en'}
-                    passHref
-                >
-                    <a className={clsx("text-2xl", "opacity-50")}>
-                        {t('change-locale')}
-                    </a>
-                </Link>
+                <LocaleSwitcher />
             </div>
             <div className={styles.containerDark}>
                 <motion.div
