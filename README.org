@@ -1,0 +1,6 @@
+#+TITLE: mangkoran's Personal Site
+
+* Tech Stacks
+
+- FE: Next.js, TailwindCSS
+- BE: Node.js
