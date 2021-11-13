@@ -1,12 +1,27 @@
 import clsx from 'clsx'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 
 const LocaleSwitcher = () => {
     const router = useRouter()
     const { t } = useTranslation('common')
+
+    const localeSwitcherVars: Variants = {
+        visible: {
+            opacity: 1,
+            transition: {
+                duration: 1
+            }
+        },
+        hidden: {
+            opacity: 0.1,
+            transition: {
+                duration: 1
+            }
+        }
+    }
 
     return (
         <Link
@@ -15,13 +30,11 @@ const LocaleSwitcher = () => {
             passHref
         >
             <motion.a
-                className={clsx("text-2xl", "opacity-10", "absolute", "top-10")}
-                whileHover={{
-                    opacity: 1,
-                    transition: {
-                        duration: 0.5
-                    },
-                }}
+                className={clsx("text-2xl", "absolute", "top-10")}
+                variants={localeSwitcherVars}
+                initial="visible"
+                animate="hidden"
+                whileHover="visible"
             >
                 {t('change-locale')}
             </motion.a>

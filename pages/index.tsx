@@ -19,12 +19,12 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 const Home: NextPage = () => {
     const divVariants: Variants = {
         offscreen: {
-            opacity: 0.1
+            opacity: 0
         },
         onscreen: {
             opacity: 1,
             transition: {
-                duration: 0.5
+                duration: 1
             }
         }
     }
@@ -137,7 +137,7 @@ const Home: NextPage = () => {
                        a 10,10 0 1,0 -20,0"
                     style={{
                         pathLength,
-                        rotate: 90,
+                        rotate: 91,
                         translateX: 5,
                         translateY: 5,
                         scaleX: -1 // Reverse direction of line animation
