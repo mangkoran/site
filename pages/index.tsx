@@ -1,11 +1,17 @@
 import clsx from 'clsx'
 import Head from 'next/head'
+import { useEffect, useState } from 'react'
 import * as fa from 'react-icons/fa'
 import type { NextPage } from 'next'
 import type { GetStaticProps } from 'next'
 import { useTranslation } from 'next-i18next'
 import styles from '../styles/Home.module.css'
-import { motion, Variants } from 'framer-motion'
+import { motion,
+         Variants,
+         useViewportScroll,
+         useSpring,
+         useTransform
+} from 'framer-motion'
 import LocaleSwitcher from '../components/locale-switcher'
 import LayoutHome, { sitleTitle } from '../components/layout/home'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
@@ -22,6 +28,12 @@ const Home: NextPage = () => {
             }
         }
     }
+    const [isComplete, setIsComplete] = useState(false);
+    const { scrollYProgress } = useViewportScroll();
+    const yRange = useTransform(scrollYProgress, [0, 0.9], [0, 1]);
+    const pathLength = useSpring(yRange, { stiffness: 400, damping: 90 });
+    useEffect(() => yRange.onChange(v => setIsComplete(v >= 1)), [yRange]);
+
     const { t } = useTranslation('common')
 
     return (
@@ -113,6 +125,25 @@ const Home: NextPage = () => {
                     </div>
                 </motion.div>
             </div>
+            <svg className={styles.progressIcon} viewBox="0 0 40 40">
+            <motion.path
+                    fill="none"
+                    strokeWidth="4"
+                    stroke="#f3f4f6"
+                    strokeDasharray="0 1"
+                    strokeLinecap="round"
+                    d="M 0,10
+                       a 10,10 0 1,0 20,0
+                       a 10,10 0 1,0 -20,0"
+                    style={{
+                        pathLength,
+                        rotate: 90,
+                        translateX: 5,
+                        translateY: 5,
+                        scaleX: -1 // Reverse direction of line animation
+                    }}
+                    />
+            </svg>
         </LayoutHome>
     )
 }

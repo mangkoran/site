@@ -91,6 +91,14 @@
     text-decoration: underline;
 }
 
+.progressIcon {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 100px;
+  height: 100px;
+}
+
 .grid {
     display: flex;
     align-items: center;
