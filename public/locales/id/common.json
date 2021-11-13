@@ -10,9 +10,9 @@
     },
     "programming-skill":  {
         "heading": "Teknik pemrograman",
-        "lang": "Bahasa: ",
-        "editor": "Teks editor/IDE: ",
-        "other": "Lain-lain: "
+        "lang": "Bahasa",
+        "editor": "Teks editor/IDE",
+        "other": "Lain-lain"
     },
     "contact": "Mari berkolaborasi"
 }

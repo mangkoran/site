@@ -10,9 +10,9 @@
     },
     "programming-skill":  {
         "heading": "Programming skills",
-        "lang": "Language: ",
-        "editor": "Text editor/IDE: ",
-        "other": "Other: "
+        "lang": "Language",
+        "editor": "Text editor/IDE",
+        "other": "Other"
     },
     "contact": "Let's enable awesomeness"
 }

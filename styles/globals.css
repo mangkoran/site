@@ -26,7 +26,7 @@ a {
     }
 
     h2 {
-        @apply mb-4 text-3xl font-bold;
+        @apply mb-3 text-2xl font-bold;
     }
 
     ul {

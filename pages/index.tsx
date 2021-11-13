@@ -41,11 +41,13 @@ const Home: NextPage = () => {
             <Head>
                 <title>{sitleTitle}</title>
             </Head>
-            <div className={styles.containerDark}>
-                <h1 className={styles.title}>{t('title')}</h1>
+            <div className={clsx(styles.containerDark, "justify-center", "items-center")}>
+                <div>
+                    <h1 className={styles.title}>{t('title')}</h1>
+                </div>
                 <LocaleSwitcher />
             </div>
-            <div className={styles.containerDark}>
+            <div className={clsx(styles.containerDark, "justify-center", "items-start")}>
                 <motion.div
                     variants={divVariants}
                     initial="offscreen"
@@ -72,7 +74,7 @@ const Home: NextPage = () => {
                     </ul>
                 </motion.div>
             </div>
-            <div className={styles.containerDark}>
+            <div className={clsx(styles.containerDark, "justify-center", "items-start")}>
                 <motion.div
                     variants={divVariants}
                     initial="offscreen"
@@ -80,26 +82,29 @@ const Home: NextPage = () => {
                     viewport={{ once: false, amount: 0.5 }}
                 >
                 <h1>{t('programming-skill.heading')}</h1>
-                <ul>
-                    <li>
-                        {t('programming-skill.lang')} C/C++, Python, Java, PHP, JavaScript, TypeScript, Elisp, MySQL/MariaDB
-                    </li>
-                    <li>
-                        Front end: React.js, Next.js, Jekyll, Bootstrap, TailwindCSS
-                    </li>
-                    <li>
-                        Back end: Apache httpd, Nginx, Node.js, Express.js
-                    </li>
-                    <li>
-                        {t('programming-skill.editor')} GNU Emacs, Visual Studio Code
-                    </li>
-                    <li>
-                        {t('programming-skill.other')} Windows, Linux, Docker, Git, GitHub Actions
-                    </li>
-                </ul>
+                    <h2>{t('programming-skill.lang')}</h2>
+                    <p>
+                        C/C++, Python, Java, PHP, JavaScript, TypeScript, Elisp, MariaDB
+                    </p>
+                    <h2>Front end</h2>
+                    <p>
+                        React.js, Next.js, Jekyll, Bootstrap, TailwindCSS
+                    </p>
+                    <h2>Back end</h2>
+                    <p>
+                        Apache httpd, Nginx, Node.js, Express.js
+                    </p>
+                    <h2>{t('programming-skill.editor')}</h2>
+                    <p>
+                        GNU Emacs, Vi/Vim/Nvim, Visual Studio Code
+                    </p>
+                    <h2>{t('programming-skill.other')}</h2>
+                    <p>
+                        Windows, Linux, Docker, Git, GitHub Actions
+                    </p>
                 </motion.div>
             </div>
-            <div className={styles.containerDark}>
+            <div className={clsx(styles.containerDark, "justify-center", "items-center")}>
                 <motion.div
                     variants={divVariants}
                     initial="offscreen"
