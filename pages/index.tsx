@@ -1,16 +1,17 @@
 import clsx from 'clsx'
 import Head from 'next/head'
-import { useEffect, useState } from 'react'
 import * as fa from 'react-icons/fa'
 import type { NextPage } from 'next'
 import type { GetStaticProps } from 'next'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'next-i18next'
 import styles from '../styles/Home.module.css'
 import { motion,
          Variants,
          useViewportScroll,
          useSpring,
-         useTransform
+         useTransform,
+         MotionValue
 } from 'framer-motion'
 import LocaleSwitcher from '../components/locale-switcher'
 import LayoutHome, { sitleTitle } from '../components/layout/home'
@@ -28,10 +29,10 @@ const Home: NextPage = () => {
             }
         }
     }
-    const [isComplete, setIsComplete] = useState(false);
-    const { scrollYProgress } = useViewportScroll();
-    const yRange = useTransform(scrollYProgress, [0, 0.9], [0, 1]);
-    const pathLength = useSpring(yRange, { stiffness: 400, damping: 90 });
+    const [ _isComplete, setIsComplete] = useState(false);
+    const { scrollYProgress }: { scrollYProgress: MotionValue<number> } = useViewportScroll();
+    const yRange: MotionValue<number> = useTransform(scrollYProgress, [0, 0.9], [0, 1]);
+    const pathLength: MotionValue<any> = useSpring(yRange, { stiffness: 400, damping: 90 });
     useEffect(() => yRange.onChange(v => setIsComplete(v >= 1)), [yRange]);
 
     const { t } = useTranslation('common')

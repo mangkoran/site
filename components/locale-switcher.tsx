@@ -1,15 +1,15 @@
 import clsx from 'clsx'
 import Link from 'next/link'
 import { useEffect } from 'react'
-import { useRouter } from 'next/router'
+import { NextRouter, useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
-import { motion, Variants, useAnimation } from 'framer-motion'
+import { motion, Variants, useAnimation, AnimationControls } from 'framer-motion'
 
 const LocaleSwitcher = () => {
-    const router = useRouter()
+    const router: NextRouter = useRouter()
     const { t } = useTranslation('common')
 
-    const animation = useAnimation();
+    const animation: AnimationControls  = useAnimation();
 
     const localeSwitcherVars: Variants = {
         start: {
