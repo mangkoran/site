@@ -1,14 +1,23 @@
 import clsx from 'clsx'
 import Link from 'next/link'
-import { motion, Variants } from 'framer-motion'
+import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
+import { motion, Variants, useAnimation } from 'framer-motion'
 
 const LocaleSwitcher = () => {
     const router = useRouter()
     const { t } = useTranslation('common')
 
+    const animation = useAnimation();
+
     const localeSwitcherVars: Variants = {
+        start: {
+            opacity: 0.1,
+            transition: {
+                duration: 4
+            }
+        },
         visible: {
             opacity: 1,
             transition: {
@@ -22,6 +31,19 @@ const LocaleSwitcher = () => {
             }
         }
     }
+    /*
+       initial ----------> idle <==========> hovered
+                delay: 1          no delay
+     */
+    useEffect(() => {
+        animation.start("start")
+    })
+    const handleHoverStart = () => {
+        animation.start("visible")
+    }
+    const handleHoverEnd = () => {
+        animation.start("hidden")
+    }
 
     return (
         <Link
@@ -33,8 +55,9 @@ const LocaleSwitcher = () => {
                 className={clsx("text-xl", "absolute", "top-10")}
                 variants={localeSwitcherVars}
                 initial="visible"
-                animate="hidden"
-                whileHover="visible"
+                animate={animation}
+                onHoverStart={handleHoverStart}
+                onHoverEnd={handleHoverEnd}
             >
                 {t('change-locale')}
             </motion.a>
