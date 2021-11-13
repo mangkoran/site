@@ -30,7 +30,7 @@ const LocaleSwitcher = () => {
             passHref
         >
             <motion.a
-                className={clsx("text-2xl", "absolute", "top-10")}
+                className={clsx("text-xl", "absolute", "top-10")}
                 variants={localeSwitcherVars}
                 initial="visible"
                 animate="hidden"

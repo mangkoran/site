@@ -133,7 +133,7 @@ const Home: NextPage = () => {
             <svg className={styles.progressIcon} viewBox="0 0 40 40">
             <motion.path
                     fill="none"
-                    strokeWidth="4"
+                    strokeWidth="2"
                     stroke="#f3f4f6"
                     strokeDasharray="0 1"
                     strokeLinecap="round"

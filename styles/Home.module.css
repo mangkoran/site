@@ -57,10 +57,10 @@
     text-decoration: underline;
 }
 
-.title {
-    line-height: 1.15;
-    font-size: 4rem;
-}
+/* .title { */
+/*     line-height: 1.15; */
+/*     font-size: 4rem; */
+/* } */
 
 .title,
 .description {
