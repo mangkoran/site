@@ -1,7 +1,18 @@
 {
     "title": "Halo, nama saya mangkoran!",
     "change-locale": "Lihat website ini dalam Bahasa Inggris",
-    "about": "Tentang mangkoran",
-    "programming-skill": "Teknik pemrograman",
+    "about": {
+        "heading": "Tentang mangkoran",
+        "school": "Seorang pelajar yang sekarang sedang menempuh pendidikan bachelor degree di Universiti Teknologi Malaysia, Johor",
+        "hometown": "Berasal dari Kota Pahlawan, namun sekarang (masih) tinggal bersama keluarga di Paris Van Java",
+        "interest-in-computer": "Mulai tertarik pada dunia perkomputeran sejak duduk di bangku SMP. Pada saat inilah mangkoran pertama kali berjumpa dengan Linux",
+        "learning-style": "Lebih menyukai belajar secara otodidak"
+    },
+    "programming-skill":  {
+        "heading": "Teknik pemrograman",
+        "lang": "Bahasa: ",
+        "editor": "Teks editor/IDE: ",
+        "other": "Lain-lain: "
+    },
     "contact": "Mari berkolaborasi"
 }

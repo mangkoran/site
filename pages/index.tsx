@@ -40,21 +40,19 @@ const Home: NextPage = () => {
                     whileInView="onscreen"
                     viewport={{ once: false, amount: 0.5 }}
                 >
-                    <h1>{t('about')}</h1>
+                    <h1>{t('about.heading')}</h1>
                     <ul>
                         <li>
-                            Seorang pelajar yang sekarang sedang menempuh pendidikan{' '}
-                            <em>bachelor degree</em> di Universiti Teknologi Malaysia, Johor
+                            {t('about.school')}
                         </li>
                         <li>
-                            Berasal dari Kota Pahlawan, namun sekarang (masih) tinggal bersama keluarga di Paris Van Java
+                            {t('about.hometown')}
                         </li>
                         <li>
-                            Mulai tertarik pada dunia perkomputeran sejak duduk di bangku SMP.
-                            Pada saat inilah mangkoran pertama kali berjumpa dengan Linux
+                            {t('about.interest-in-computer')}
                         </li>
                         <li>
-                            Lebih menyukai belajar secara otodidak
+                            {t('about.learning-style')}
                         </li>
                         <li>
                             Gateron Brown {'>>>'}
@@ -69,10 +67,10 @@ const Home: NextPage = () => {
                     whileInView="onscreen"
                     viewport={{ once: false, amount: 0.5 }}
                 >
-                <h1>{t('programming-skill')}</h1>
+                <h1>{t('programming-skill.heading')}</h1>
                 <ul>
                     <li>
-                        Bahasa: C/C++, Python, Java, PHP, JavaScript, TypeScript, Elisp, MySQL/MariaDB
+                        {t('programming-skill.lang')} C/C++, Python, Java, PHP, JavaScript, TypeScript, Elisp, MySQL/MariaDB
                     </li>
                     <li>
                         Front end: React.js, Next.js, Jekyll, Bootstrap, TailwindCSS
@@ -80,9 +78,11 @@ const Home: NextPage = () => {
                     <li>
                         Back end: Apache httpd, Nginx, Node.js, Express.js
                     </li>
-                    <li>Teks editor/IDE: GNU Emacs, Visual Studio Code</li>
                     <li>
-                        Lain-lain: Windows, Linux, Docker, Git, GitHub Actions
+                        {t('programming-skill.editor')} GNU Emacs, Visual Studio Code
+                    </li>
+                    <li>
+                        {t('programming-skill.other')} Windows, Linux, Docker, Git, GitHub Actions
                     </li>
                 </ul>
                 </motion.div>

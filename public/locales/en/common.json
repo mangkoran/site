@@ -1,7 +1,18 @@
 {
     "title": "Hello, mangkoran here!",
     "change-locale": "View this website in Bahasa Indonesia",
-    "about": "About mangkoran",
-    "programming-skill": "Programming skills",
+    "about": {
+        "heading": "About mangkoran",
+        "school": "A student that currently pursuing bachelor degree in Universiti Teknologi Malaysia, Johor",
+        "hometown": "Came from City of Heroes, though now (still) live with his family in Paris Van Java",
+        "interest-in-computer": "Started to like technology and computer world since high school. It was at this time that mangkoran first encountered with Linux",
+        "learning-style": "More comfortable with self-taught learning"
+    },
+    "programming-skill":  {
+        "heading": "Programming skills",
+        "lang": "Language: ",
+        "editor": "Text editor/IDE: ",
+        "other": "Other: "
+    },
     "contact": "Let's enable awesomeness"
 }
