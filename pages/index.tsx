@@ -3,17 +3,13 @@ import Head from 'next/head'
 import * as fa from 'react-icons/fa'
 import type { NextPage } from 'next'
 import type { GetStaticProps } from 'next'
-import { useEffect, useState } from 'react'
 import { useTranslation } from 'next-i18next'
 import styles from '../styles/Home.module.css'
 import { motion,
          Variants,
-         useViewportScroll,
-         useSpring,
-         useTransform,
-         MotionValue
 } from 'framer-motion'
 import LocaleSwitcher from '../components/locale-switcher'
+import ProgressBar from '../components/progress-bar'
 import LayoutHome, { sitleTitle } from '../components/layout/home'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
@@ -29,12 +25,6 @@ const Home: NextPage = () => {
             }
         }
     }
-    const [ _isComplete, setIsComplete] = useState(false);
-    const { scrollYProgress }: { scrollYProgress: MotionValue<number> } = useViewportScroll();
-    const yRange: MotionValue<number> = useTransform(scrollYProgress, [0, 0.9], [0, 1]);
-    const pathLength: MotionValue<any> = useSpring(yRange, { stiffness: 400, damping: 90 });
-    useEffect(() => yRange.onChange(v => setIsComplete(v >= 1)), [yRange]);
-
     const { t } = useTranslation('common')
 
     return (
@@ -112,7 +102,7 @@ const Home: NextPage = () => {
                     whileInView="onscreen"
                     viewport={{ once: false, amount: 0.5 }}
                 >
-                <h1>{t('contact')}</h1>
+                <h1 className={clsx(styles.title)}>{t('contact')}</h1>
                 <div className={clsx("flex", "justify-center")}>
                         <ul className={clsx("list-none", "w-[fit-content]", styles.link)}>
                             <li><fa.FaAt className="inline mr-2" /><a href="mailto:afnazrie@gmail.com">
@@ -131,25 +121,9 @@ const Home: NextPage = () => {
                     </div>
                 </motion.div>
             </div>
-            <svg className={styles.progressIcon} viewBox="0 0 40 40">
-            <motion.path
-                    fill="none"
-                    strokeWidth="2"
-                    stroke="#f3f4f6"
-                    strokeDasharray="0 1"
-                    strokeLinecap="round"
-                    d="M 0,10
-                       a 10,10 0 1,0 20,0
-                       a 10,10 0 1,0 -20,0"
-                    style={{
-                        pathLength,
-                        rotate: 91,
-                        translateX: 5,
-                        translateY: 5,
-                        scaleX: -1 // Reverse direction of line animation
-                    }}
-                    />
-            </svg>
+            <div className={clsx(styles.progressIcon)}>
+                <ProgressBar />
+            </div>
         </LayoutHome>
     )
 }

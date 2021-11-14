@@ -22,23 +22,27 @@ a {
 /* tailwind */
 @layer base {
     h1 {
-        @apply mb-5 text-5xl;
+        @apply mb-5;
+        @apply text-3xl;
+        @apply sm:text-5xl;
     }
 
     h2 {
-        @apply mb-3 text-3xl;
+        @apply mb-3;
+        @apply text-xl;
+        @apply sm:text-3xl;
     }
 
     ul {
-        @apply list-disc list-outside;
+        @apply list-none;
+        @apply list-inside;
     }
 
+    a,
     p,
     li {
-        @apply mb-3 text-xl;
-    }
-
-    li {
-        /* @apply flex; */
+        @apply mb-3;
+        @apply text-base;
+        @apply sm:text-xl;
     }
 }
