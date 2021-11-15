@@ -121,9 +121,7 @@ const Home: NextPage = () => {
                     </div>
                 </motion.div>
             </div>
-            <div className={clsx(styles.progressIcon)}>
-                <ProgressBar />
-            </div>
+            <ProgressBar />
         </LayoutHome>
     )
 }
