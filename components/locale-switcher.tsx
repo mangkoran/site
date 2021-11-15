@@ -15,7 +15,7 @@ const LocaleSwitcher = () => {
         start: {
             opacity: 0.1,
             transition: {
-                duration: 4
+                duration: 2
             }
         },
         visible: {
