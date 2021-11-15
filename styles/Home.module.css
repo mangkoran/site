@@ -91,14 +91,8 @@
 }
 
 .progressIcon {
-  /* position: fixed; */
-  /* top: 20px; */
-  /* left: 20px; */
-  /* width: 100px; */
-    /* height: 100px; */
     @apply fixed;
     @apply top-20;
-    /* @apply left-5; */
     @apply left-[calc(50%-22px)];
     @apply w-10;
     @apply h-10;
