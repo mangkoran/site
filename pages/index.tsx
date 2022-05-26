@@ -21,19 +21,21 @@ const Home = ({ allPostsData }: {
         Computer Network and Security undergradute student at Universiti Teknologi Malaysia.
         Interested in cloud computing, Kubernetes, and home server.
       </p>
-      {allPostsData.map(({ id, date, title }: {
-        id: string,
-        date: string,
-        title: string
-      }) => (
-        <li key={id}>
-          {title}
-          <br />
-          {id}
-          <br />
-          {date}
-        </li>
-      ))}
+      <ul>
+        {allPostsData.map(({ id, date, title }: {
+          id: string,
+          date: string,
+          title: string
+        }) => (
+          <li key={id} className={clsx("pb-4")}>
+            {title}
+            <br />
+            {id}
+            <br />
+            {date}
+          </li>
+        ))}
+      </ul>
     </Layout>
   )
 }
