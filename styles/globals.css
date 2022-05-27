@@ -14,10 +14,14 @@ body {
 
 * {
   box-sizing: border-box;
+  @apply text-slate-300;
+  @apply bg-slate-900;
+  @apply border-slate-600;
 }
 
 a {
-  color: #0070f3;
+  /* color: #0070f3; */
+  @apply text-sky-600;
   text-decoration: none;
 }
 
