@@ -12,10 +12,7 @@ const Home = ({ allPostsData }: {
   }[]
 }) => {
   return (
-    <Layout home>
-      <Head>
-        <title>Home</title>
-      </Head>
+    <Layout home title="Home">
       <h1 className={clsx("pb-8")}>Afiq Nazrie</h1>
       <p className={clsx("pb-8")}>
         Computer Network and Security undergradute student at Universiti Teknologi Malaysia.
