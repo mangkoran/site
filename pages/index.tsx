@@ -15,7 +15,7 @@ const Home = ({ allPostsData }: {
     <Layout home title="Home">
       <h1 className={clsx("pb-8")}>Afiq Nazrie</h1>
       <p className={clsx("pb-8")}>
-        Computer Network and Security undergradute student at Universiti Teknologi Malaysia.
+        Computer Network and Security undergraduate student at Universiti Teknologi Malaysia.
         Interested in cloud computing, Kubernetes, and home server.
       </p>
       {/* <p className={clsx("pb-10")}>
